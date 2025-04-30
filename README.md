@@ -6,7 +6,7 @@ This repository is filled with _my_ solutions to the algomap.io roadmap. I’m n
 
 ## 🥊 Progress Tracker: Going the Distance
 
-![Progress](https://progress-bar.dev/1/?title=completed)
+![Progress](https://img.shields.io/badge/Progress-1%25-brightgreen)
 
 ### Completed Challenges
 - [ ] Arrays & Strings
