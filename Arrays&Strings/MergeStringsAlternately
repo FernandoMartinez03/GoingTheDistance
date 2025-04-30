@@ -1,0 +1,37 @@
+"""
+You are given two strings word1 and word2. Merge the strings by adding letters in alternating order, starting with word1.
+If a string is longer than the other, append the additional letters onto the end of the merged string.
+
+Return the merged string.
+
+Input: word1 = "abcd", word2 = "pq"
+Output: "apbqcd"
+Explanation: Notice that as word1 is longer, "cd" is appended to the end.
+word1:  a   b   c   d
+word2:    p   q 
+merged: a p b q c   d
+
+NOTES: Strings are immutable, meaning they can't be modified in-place. It's better to deal with them as lists and use a .join() at the end.
+"""
+
+class Solution(object):
+    def mergeAlternately(self, word1, word2):
+        """
+        :type word1: str
+        :type word2: str
+        :rtype: str
+        """
+        #SAME procedure, but dealing with LISTS and "".join() at the end to get the string from the list!
+        mergedword = []
+        for i in range(maxlen):
+            if i >= wordlen1:
+                mergedword.append(word2[i])
+            elif i >= wordlen2:
+                mergedword.append(word1[i])
+            else:
+                mergedword.append(word1[i])
+                mergedword.append(word2[i])
+
+        return "".join(mergedword)
+
+      #https://leetcode.com/problems/merge-strings-alternately/description/
