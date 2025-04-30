@@ -1,0 +1,31 @@
+"""
+Given an integer array nums of size n, return the number with the value closest to 0 in nums. 
+If there are multiple answers, return the number with the largest value.
+
+Input: nums = [2,-1,1]
+Output: 1
+Explanation: 1 and -1 are both the closest numbers to 0, so 1 being larger is returned.
+
+NOTES: Not much to say, iterate the list one at a time and compare. O(n) time complexity. REMEMBER to take into consideration float("inf") and float("-inf").
+"""
+
+class Solution(object):
+    def findClosestNumber(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        tentativo = float('inf')
+        best = 0
+
+        for i in range(len(nums)):
+            x = abs(nums[i])
+            if x < tentativo:
+                tentativo = x
+                best = nums[i]
+            elif x == tentativo:
+                if nums[i] > best:
+                    best = nums[i]
+        return best
+
+#https://leetcode.com/problems/find-closest-number-to-zero/
