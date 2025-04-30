@@ -12,6 +12,7 @@ word2:    p   q
 merged: a p b q c   d
 
 NOTES: Strings are immutable, meaning they can't be modified in-place. It's better to deal with them as lists and use a .join() at the end.
+       Try to use cleaner code such as maxlen = max(len(word1), len(word2)) instead of if/else
 """
 
 class Solution(object):
@@ -21,6 +22,8 @@ class Solution(object):
         :type word2: str
         :rtype: str
         """
+
+        maxlen = max(wordlen1, wordlen2) #cleaner than the if / else statment. 
         #SAME procedure, but dealing with LISTS and "".join() at the end to get the string from the list!
         mergedword = []
         for i in range(maxlen):
