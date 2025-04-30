@@ -1,1 +1,5 @@
-When I was a kid, I used to sit in awe while watching the Rocky movies. One moment that has struck with me particularly is Rocky saying that he doesn't want to win--he doesn't want to be the champion. He just wants to go the distance. Prove to himself that "he's no bum". I think this is something I relate to strongly. This repository will be filled with MY solutions to the algomap.io roadmap. I don't pretend to be the number one coding. I just want to go the distance.
+# Going the Distance
+
+When I was a kid, I used to sit in awe watching the Rocky movies. One moment that stuck with me is when Rocky says he doesn’t care about winning or being the champion—he just wants to go the distance, to prove to himself that he’s no bum. I relate to that deeply.
+
+This repository is filled with __my__ solutions to the algomap.io roadmap. I’m not here to claim I’m the best coder. **I just want to go the distance.**
