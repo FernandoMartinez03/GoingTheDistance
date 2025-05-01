@@ -1,0 +1,39 @@
+"""
+Given two strings s and t, return true if s is a subsequence of t, or false otherwise.
+
+A subsequence of a string is a new string that is formed from the original string by deleting some (can be none) 
+of the characters without disturbing the relative positions of the remaining characters. 
+(i.e., "ace" is a subsequence of "abcde" while "aec" is not).
+
+Example 1:
+
+Input: s = "abc", t = "ahbgdc"
+Output: true
+
+NOTES: Two pointer technique is great for SUBSEQUENCES. In this case, I'm using a pointer (x) to find the little subsequence I'm hoping to match.
+       The other pointer I'm using is simply iterating through the loop. We're iterating over the same loop with two different pointers for different
+       purposes, which leads to this clean solution!
+"""
+
+class Solution(object):
+    def isSubsequence(self, s, t):
+        """
+        :type s: str
+        :type t: str
+        :rtype: bool
+        """
+        if len(s) == 0:
+            return True
+        x = 0
+        lookFor = s[x]
+        for i in range(len(t)):
+            if t[i] == lookFor:
+                x += 1
+                if x == len(s):
+                    return True
+                lookFor = s[x]
+
+        return False
+
+
+#https://leetcode.com/problems/is-subsequence/submissions/1623156943/
