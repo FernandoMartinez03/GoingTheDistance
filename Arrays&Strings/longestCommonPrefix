@@ -1,0 +1,54 @@
+"""
+
+Write a function to find the longest common prefix string amongst an array of strings.
+If there is no common prefix, return an empty string "".
+
+Example 1:
+
+Input: strs = ["flower","flow","flight"]
+Output: "fl"
+
+NOTES: God how I suffered. It's indeed really a process this shit. LOL.
+       Um, I know now I could've added a for loop, but a while loop scared
+       me less, when talking about efficiency (which now i know is the sane)
+       So, logic is sound, as always, once i figure it out... I first find the 
+       smallest item in list, so that no index shannanigans occur. 
+       Then, I iterate over this small word, and in the inner loop, I iterate 
+       through each individual char of the list. If they don't match, I return
+       whatever prefic i had accumulated. If they do, they contiue checking, and
+       once the inner loop reached the end (it has checked all individual char of all words in the round)
+       it adds the current char into the prefix. THe process now continues with the next char.
+
+      So the outer loop declares that we will be working with an x sized word.
+      The inner loop iterates one character at a time of each word.
+
+      The end. God I hate this sometimes. :)
+
+"""
+
+class Solution(object):
+    def longestCommonPrefix(self, strs):
+        """
+        :type strs: List[str]
+        :rtype: str
+        """
+
+        j = 1
+        pref = ''
+        least = 0
+
+        for i in range(1, len(strs)):
+            if len(strs[i]) < len(strs[least]):
+                least = i
+
+        for i in range(len(strs[least])):
+            j = 0
+            while j < len(strs):
+                if strs[j][i] != strs[least][i]:
+                    return pref
+                j+=1
+            pref+=strs[least][i]
+        return pref
+
+
+#https://leetcode.com/problems/longest-common-prefix/
