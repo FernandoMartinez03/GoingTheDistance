@@ -1,0 +1,52 @@
+
+Given an integer array nums, return an array answer such that answer[i] is equal to the product of all the elements of nums except nums[i].
+
+The product of any prefix or suffix of nums is guaranteed to fit in a 32-bit integer.
+
+You must write an algorithm that runs in O(n) time and without using the division operation.
+
+Input: nums = [1,2,3,4]
+Output: [24,12,8,6]
+
+NOTES: NOT INTUITIVE: WE MUST FIRST GATHER THE PREFIX -> 
+
+[1,1,2,6]
+
+THEN THE SUFFIX (BACKWARDS!) -> 
+
+[24,12,4,1]
+
+AND MULTIPLY EACH BY EACH:
+
+24 * 1 = 24
+12 * 1 = 12
+4  * 2 = 8
+1  * 6 = 6
+
+[24,12,8,6]
+
+INITIALIZE SUFFIX AND PREFFIX WITH ZEROS, AND ADD THE ONE ACCORDINGLY
+
+
+class Solution(object):
+    def productExceptSelf(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: List[int]
+        """
+        sz = len(nums)-1
+        prefixArray = [1] + [0] * (len(nums)-1)
+        for i in range(1, len(prefixArray)):
+            prefixArray[i] = prefixArray[i-1] * nums[i-1]
+
+        suffixArray = [0] * (len(nums)-1) + [1]
+        for i in range(len(suffixArray)-1,0,-1): 
+            suffixArray[i-1] = suffixArray[i]*nums[sz]
+            sz-=1
+
+        result = []
+        for i in range(len(nums)):
+            result.append(prefixArray[i] * suffixArray[i])
+        return result
+
+#https://leetcode.com/problems/product-of-array-except-self/description/
